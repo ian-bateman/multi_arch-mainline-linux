@@ -134,7 +134,7 @@ Missing lsb_release command,
 
     emerge sys-apps/lsb-release
 
-Note fakeroot and dpkg are required to build deb a package.
+Note fakeroot and dpkg are required to build a deb package.
 
 @@
 		return 1
