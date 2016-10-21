@@ -1,19 +1,40 @@
-This is just a set of scripts to rebuild a known working kernel for ARM devices.
+This is just a set of scripts to rebuild a known working kernel for both ARM
+devices and funky AMD laptops (mainly because of overheating and the need to
+build a custom and/or packaged kernel on different build host.  Also you get
+the latest linux-stable.
 
-Script Bugs: "bugs@rcn-ee.com"
+The main config variables in version.sh are just hacked in at the moment;
+more flexible/transparent behavior is planned. For now it supports only ARM
+or x86_64 (AMD 64-bit) kernels.
 
-Note, for older git tag's please use: https://github.com/RobertCNelson/yakbuild
+Host detection has basic Gentoo support added, but you'll need to manually 
+install the required (normal) dependencies plus dpkg and fakeroot to build
+a deb kernel package.
 
-Dependencies: GCC ARM Cross ToolChain
+Select the *-amd branch to try the laptop kernel build, or versioned branch
+for an ARM kernel.
+
+For bugs please the issue tracker:
+
+https://github.com/sarnold/multi_arch-mainline-linux/issues
+
+ARM Dependencies: GCC ARM Cross ToolChain
 
 Linaro:
 http://www.linaro.org/downloads/
 
-Dependencies: Linux Kernel Source
+x86_64 Dependencies: GCC Native ToolChain
 
-This git repo contains just scripts/patches to build a specific kernel for some
-ARM devices. The kernel source will be downloaded when you run any of the build
-scripts.
+Gentoo: of course!  Also, lsb-release, dpkg, and fakeroot.
+
+Debian/Ubuntu: apt-get install build-essential (or install gcc). Other build
+tools should be pre-installed; the script will check for required packages.
+
+Common Dependencies: Linux Kernel Source
+
+This git repo contains just scripts/patches to build a specific kernel for
+some ARM devices and x86_64 machines. The kernel source will be downloaded
+when you run any of the build scripts.
 
 By default this script will clone the linux-stable tree:
 https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
@@ -40,4 +61,5 @@ Development/Hacking:
 first run (to setup baseline tree): ./build_kernel.sh
 then modify files under KERNEL directory
 then run (to rebuild with your changes): ./tools/rebuild.sh
+
 
