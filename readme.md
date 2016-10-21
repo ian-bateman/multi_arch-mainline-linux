@@ -14,7 +14,7 @@ a deb kernel package.
 Select the *-amd branch to try the laptop kernel build, or versioned branch
 for an ARM kernel.
 
-For bugs please the issue tracker:
+For bugs please use the issue tracker:
 
 https://github.com/sarnold/multi_arch-mainline-linux/issues
 
