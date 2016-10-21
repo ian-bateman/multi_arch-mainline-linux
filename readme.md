@@ -1,6 +1,6 @@
 This is just a set of scripts to rebuild a known working kernel for both ARM
 devices and funky AMD laptops (mainly because of overheating and the need to
-build a custom and/or packaged kernel on different build host.  Also you get
+build a custom and/or packaged kernel on different build host).  Also you get
 the latest linux-stable.
 
 The main config variables in version.sh are just hacked in at the moment;
