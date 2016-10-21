@@ -7,6 +7,12 @@ ARCH=$(uname -m)
 if [ "x${ARCH}" = "xarmv7l" ] ; then
 	#Native arm gcc compiler
 	CC=
+elif [ "x${ARCH}" = "xx86_64" ] ; then
+	if [ -f /etc/gentoo-release ] ; then
+		CC=x86_64-pc-linux-gnu-
+	else
+		CC=x86_64-linux-gnu-
+	fi
 fi
 
 ###REQUIRED:

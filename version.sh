@@ -2,14 +2,26 @@
 #
 ARCH=$(uname -m)
 
-config="multi_v7_defconfig"
+#config="multi_v7_defconfig"
+#defconfig="defconfig"
+#DISTRO=cross
+#DEBARCH=armhf
+#build_prefix="-multiv7-r"
 
-build_prefix="-multiv7-r"
+#amd64
+KERNEL_ARCH=x86_64
+toolchain="native"
+defconfig="asus_amd_laptop_defconfig"
+config="${KERNEL_ARCH}_defconfig"
+DISTRO=native
+DEBARCH=amd64
+build_prefix="-asus-amd-r"
+
 branch_prefix="v"
 branch_postfix=".x"
 
 #arm
-KERNEL_ARCH=arm
+#KERNEL_ARCH=arm
 #toolchain="gcc_linaro_eabi_4_8"
 #toolchain="gcc_linaro_eabi_4_9"
 #toolchain="gcc_linaro_eabi_5"
@@ -19,7 +31,7 @@ KERNEL_ARCH=arm
 #toolchain="gcc_linaro_gnueabihf_4_8"
 #toolchain="gcc_linaro_gnueabihf_4_9"
 #toolchain="gcc_linaro_gnueabihf_5"
-toolchain="gcc_linaro_gnueabihf_6"
+#toolchain="gcc_linaro_gnueabihf_6"
 #arm64
 #KERNEL_ARCH=arm64
 #toolchain="gcc_linaro_aarch64_gnu_5"
@@ -37,7 +49,4 @@ kernel_rt=".X-rtY"
 
 #git branch
 BRANCH="${branch_prefix}${KERNEL_REL}${branch_postfix}"
-
-DISTRO=cross
-DEBARCH=armhf
 #

@@ -57,6 +57,9 @@ dl_gcc_generic () {
 	if [ "x${ARCH}" = "xarmv7l" ] ; then
 		#using native gcc
 		CC=
+	elif [ "x${ARCH}" = "xx86_64" ] ; then
+		#also using native gcc
+		CC=
 	else
 		CC="${gcc_dir}/${directory}/${binary}"
 	fi
@@ -291,6 +294,20 @@ gcc_toolchain () {
 		datestamp="${gcc_version}-20${release}-${target}"
 
 		binary="bin/${target}-"
+		;;
+
+	native)
+		gcc_version="5"
+		release="local"
+		# debian/ubuntu
+		#target="x86_64-linux-gnu"
+		# gentoo
+		target="x86_64-pc-linux-gnu"
+		directory="gcc-native-${gcc_version}-${release}-${target}"
+		datestamp="${gcc_version}-${release}-${target}"
+
+		mkdir -p "${gcc_dir}/${directory}/"
+		touch "${gcc_dir}/${directory}/${datestamp}"
 		;;
 
 	*)

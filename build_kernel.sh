@@ -48,7 +48,7 @@ copy_defconfig () {
 	if [ ! -f "${DIR}/.yakbuild" ] ; then
 		make ARCH=${KERNEL_ARCH} CROSS_COMPILE="${CC}" "${config}"
 		cp -v .config "${DIR}/patches/ref_${config}"
-		cp -v "${DIR}/patches/defconfig" .config
+		cp -v "${DIR}/patches/${defconfig}" .config
 	else
 		make ARCH=${KERNEL_ARCH} CROSS_COMPILE="${CC}" rcn-ee_defconfig
 	fi
@@ -67,6 +67,8 @@ make_menuconfig () {
 make_kernel () {
 	if [ "x${KERNEL_ARCH}" = "xarm" ] ; then
 		image="zImage"
+	elif [ "x${KERNEL_ARCH}" = "xx86_64" ] ; then
+		image="bzImage"
 	else
 		image="Image"
 	fi

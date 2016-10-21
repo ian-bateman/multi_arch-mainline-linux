@@ -48,7 +48,7 @@ copy_defconfig () {
 	if [ ! -f "${DIR}/.yakbuild" ] ; then
 		make ARCH=${KERNEL_ARCH} CROSS_COMPILE="${CC}" "${config}"
 		cp -v .config "${DIR}/patches/ref_${config}"
-		cp -v "${DIR}/patches/defconfig" .config
+		cp -v "${DIR}/patches/${defconfig}" .config
 	else
 		make ARCH=${KERNEL_ARCH} CROSS_COMPILE="${CC}" rcn-ee_defconfig
 	fi

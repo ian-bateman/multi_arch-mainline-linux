@@ -24,6 +24,10 @@ detect_host () {
 		DIST=$(cat /etc/SuSE-release | tr "\n" ' '| sed s/VERSION.*//)
 		REV=$(cat /etc/SuSE-release | tr "\n" ' ' | sed s/.*=\ //)
 		trim "suse-$REV"
+	elif [ -f /etc/gentoo-release ] ; then
+		DIST="Gentoo Based"
+		gentoo="gentoo"
+		echo "${gentoo}"
 	elif [ -f /etc/debian_version ] ; then
 		DIST="Debian Based"
 		debian="debian"
@@ -117,7 +121,25 @@ Missing patch command,
 @@
         return 1
     fi
-    
+}
+
+gentoo_reqs () {
+# --- needs lsb-release for normal build, fakeroot and dpkg for deb build ---
+	if [ ! "$( which lsb_release )" ]
+	then
+		cat >&2 <<@@
+Missing lsb_release command,
+ it is in the main portage tree for $BUILD_HOST so it can be 
+ installed simply using:
+
+    emerge sys-apps/lsb-release
+
+Note fakeroot and dpkg are required to build deb a package.
+
+@@
+		return 1
+	fi
+
 }
 
 check_dpkg () {
@@ -586,5 +608,7 @@ case "$BUILD_HOST" in
     suse*)
 	    suse_regs "$BUILD_HOST" || error "Failed dependency check"
         ;;
+    gentoo*)
+            gentoo_reqs || error "Failed dependency check"
 esac
 
