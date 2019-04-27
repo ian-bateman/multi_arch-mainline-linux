@@ -11,11 +11,11 @@ ARCH=$(uname -m)
 #amd64
 KERNEL_ARCH=x86_64
 toolchain="native"
-defconfig="asus_amd_laptop_defconfig"
+defconfig="orchardos_defconfig"
 config="${KERNEL_ARCH}_defconfig"
 DISTRO=native
 DEBARCH=amd64
-build_prefix="-asus-amd-r"
+build_prefix="-intel-x"
 
 branch_prefix="v"
 branch_postfix=".x"
@@ -38,8 +38,8 @@ branch_postfix=".x"
 #toolchain="gcc_linaro_aarch64_gnu_6"
 
 #Kernel/Build
-KERNEL_REL=4.8
-KERNEL_TAG=${KERNEL_REL}
+KERNEL_REL=4.20
+KERNEL_TAG=${KERNEL_REL}.17
 BUILD=${build_prefix}0
 kernel_rt=".X-rtY"
 
