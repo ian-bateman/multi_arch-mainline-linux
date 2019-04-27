@@ -189,10 +189,17 @@ local_patch () {
 	${git} "${DIR}/patches/dir/0001-patch.patch"
 }
 
+bootsplash () {
+	echo "dir: bootsplash"
+	${git} "${DIR}/patches/bootsplash/0001-linux-stable-Add-kernel-bootsplash-patches.patch"
+	${git} "${DIR}/patches/bootsplash/0002-bootsplash-add-orchard-logo-build-script.patch"
+}
+
 #external_git
 #aufs4
 #rt
 #local_patch
+bootsplash
 
 pre_backports () {
 	echo "dir: backports/${subsystem}"
