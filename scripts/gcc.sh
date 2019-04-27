@@ -297,7 +297,7 @@ gcc_toolchain () {
 		;;
 
 	native)
-		gcc_version="5"
+		gcc_version="7"
 		release="local"
 		# debian/ubuntu
 		#target="x86_64-linux-gnu"
