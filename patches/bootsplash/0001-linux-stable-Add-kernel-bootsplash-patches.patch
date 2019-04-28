@@ -1,7 +1,8 @@
-From 754ec2c948e5a6b1a20a4bacd841d788371b33aa Mon Sep 17 00:00:00 2001
+From 52526fd898fb133c1208043b60b8baa2dd4e51a9 Mon Sep 17 00:00:00 2001
 From: Steve Arnold <nerdboy@gentoo.org>
 Date: Fri, 1 Jun 2018 13:52:35 -0700
-Subject: [PATCH] linux-stable: Add kernel bootsplash patches and default gifs
+Subject: [PATCH 1/4] linux-stable: Add kernel bootsplash patches and default
+ gifs
 
 * https://github.com/philmmanjaro/linux-bootsplash
 

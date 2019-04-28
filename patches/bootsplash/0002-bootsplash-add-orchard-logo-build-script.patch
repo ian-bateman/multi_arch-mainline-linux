@@ -1,11 +1,11 @@
-From 5f9241c32899be281ebaecd11bb7a037139df31e Mon Sep 17 00:00:00 2001
+From 7661f791c254353d4d777933fefc8857edd11f15 Mon Sep 17 00:00:00 2001
 From: Steve Arnold <nerdboy@gentoo.org>
 Date: Tue, 3 Apr 2018 18:27:04 -0700
-Subject: [PATCH] tools/bootsplash: add orchard build script
+Subject: [PATCH 2/4] tools/bootsplash: add orchard build script
 
 Signed-off-by: Steve Arnold <nerdboy@gentoo.org>
 ---
- tools/bootsplash/bootsplash-orchard.sh |  66 +++++++++++++++++++++++++++++++++
+ tools/bootsplash/bootsplash-orchard.sh | 66 ++++++++++++++++++++++++++
  1 file changed, 66 insertions(+)
  create mode 100755 tools/bootsplash/bootsplash-orchard.sh
 
@@ -81,6 +81,6 @@ index 000000000000..cd8b5fa3a982
 +	bootsplash
 +
 +rm *.rgb
-
 -- 
-2.16.1
+2.20.1
+
